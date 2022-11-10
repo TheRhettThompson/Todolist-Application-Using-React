@@ -1,15 +1,9 @@
 import React, { useState } from "react";
-import { Item } from "./Item.jsx";
-import { ItemLeft } from "./ItemLeft.jsx";
-import { DeleteTab } from "./DeleteTab.jsx";
 
 
-export const Input = () => {
-
-  const [inputValue, setInputValue] = useState("");
-  const [list, addToList] = useState([]);
-  var itemsLeftNumber = list.length;
-
+export const Input = (props) => {
+    const [inputValue, setInputValue] = useState("");
+ 
     return (
         <div>
             <input
@@ -19,15 +13,10 @@ export const Input = () => {
             value={inputValue}
             />
             <button
-                onClick={() => {addToList([...list, inputValue])}}
+                onClick={() => {props.setList([...props.list, inputValue])}}
                 >Add Task
             </button>
-            <div>
-                {list.map((value, key) => {
-                    return <Item input={value} key={key}/>
-                })}
-            </div>
-            <ItemLeft quantity={itemsLeftNumber}/>
+           
         </div>
     );
 };

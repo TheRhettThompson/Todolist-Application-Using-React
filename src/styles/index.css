@@ -21,13 +21,14 @@
 }
 
 .todoitem{
-    border: 1px;
+    border: 1px red;
+     
 }
 
-.delete{
+ 
     
     
-}
+
 /* 
 
     You can write your own styles here...
